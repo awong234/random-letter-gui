@@ -72,6 +72,7 @@ class letterGenerator:
         self.runstatus = False
 
 def letter_generator():
+    global root
     root = tk.Tk()
     root.rowconfigure(1, minsize = 10)
     gui = letterGenerator(root)
