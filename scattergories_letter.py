@@ -1,3 +1,4 @@
+#!python
 import tkinter as tk
 import string
 import random
@@ -12,14 +13,15 @@ class letterGenerator:
         self.runstatus = True
         self.letter = tk.StringVar()
         self.letter.set("A") # Initialize with "A"
-        self.letter_size = 80
+        self.letter_size = 200
+        self.letter_font = "Old English Text MT"
 
         # GUI
         self.master = master
         master.title("Scattergories letter sampler")
         self.label = tk.Label(master,
             text = "Click STOP to select letter:",
-            font = "Calibri 20 bold"
+            font = ("Corbel", 20, "bold")
         )
         self.label.grid(row=0)
 
@@ -27,7 +29,8 @@ class letterGenerator:
         self.button = tk.Button(master,
             text = 'STOP',
             justify = 'left',
-            command = self.stop_cycle
+            command = self.stop_cycle,
+            font = ("Corbel")
         )
         self.button.grid(row=0, column=1)
 
@@ -36,7 +39,8 @@ class letterGenerator:
             master,
             text = 'LETTER ROULETTE',
             justify = 'left',
-            command = self.letterLoop
+            command = self.letterLoop,
+            font = ("Corbel")
         )
         self.button_update_letter.grid(row=0,column=2)
 
@@ -44,7 +48,7 @@ class letterGenerator:
         self.letter_label = tk.Label(
             master,
             textvariable = self.letter,
-            font = f"Calibri {self.letter_size}"
+            font = (f"{self.letter_font}", self.letter_size)
         )
         self.letter_label.grid(row=1, columnspan=3)
 
@@ -55,7 +59,7 @@ class letterGenerator:
             self.letter.set(str(LETTERS[index]))
             self.letter_label.config(
                 foreground = COLORS[index],
-                font = f"Calibri {self.letter_size}"
+                font = (f"{self.letter_font}", self.letter_size)
             )
             root.after(20, self.letterLoop)
         else:
