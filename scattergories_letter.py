@@ -61,7 +61,7 @@ class letterGenerator:
                 foreground = COLORS[index],
                 font = (f"{self.letter_font}", self.letter_size)
             )
-            root.after(20, self.letterLoop)
+            self.master.after(20, self.letterLoop)
         else:
             self.letter_label.config(
                 foreground = 'black'
@@ -72,7 +72,6 @@ class letterGenerator:
         self.runstatus = False
 
 def letter_generator():
-    global root
     root = tk.Tk()
     root.rowconfigure(1, minsize = 10)
     gui = letterGenerator(root)
