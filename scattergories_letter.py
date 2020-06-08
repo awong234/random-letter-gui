@@ -71,7 +71,11 @@ class letterGenerator:
     def stop_cycle(self):
         self.runstatus = False
 
-root = tk.Tk()
-root.rowconfigure(1, minsize = 10)
-gui = letterGenerator(root)
-root.mainloop()
+def letter_generator():
+    root = tk.Tk()
+    root.rowconfigure(1, minsize = 10)
+    gui = letterGenerator(root)
+    root.mainloop()
+
+if __name__ == "__main__":
+    letter_generator()
