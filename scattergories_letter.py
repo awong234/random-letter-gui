@@ -16,31 +16,35 @@ class letterGenerator:
         self.letter.set("A") # Initialize with "A"
         self.letter_size = 200
         self.letter_speed = 20
+        self.letter_font = "Old English Text MT"
 
         # GUI
         self.master = master
         master.title("Scattergories letter sampler")
         self.label = tk.Label(master,
             text = "Click STOP\nto select letter:",
+            font = "Corbel 20 bold"
         )
-        self.label.grid(row=0, columnspan=3)
+        self.label.grid(row=0)
 
         # Make stop button; set false initially
         self.button = tk.Button(master,
             text = 'STOP',
+            font = "Corbel",
             justify = 'left',
             command = lambda:[self.stop_cycle()],
         )
-        self.button.grid(row=1, column=0)
+        self.button.grid(row=0, column=1)
 
         # Make button for letter loop
         self.button_update_letter = tk.Button(
             master,
             text = 'LETTER ROULETTE',
+            font = "Corbel",
             justify = 'left',
             command = lambda:[self.start_cycle(), self.item_reel(), self.letterLoop()],
         )
-        self.button_update_letter.grid(row=1,column=1)
+        self.button_update_letter.grid(row=0,column=2)
 
         # LETTER LABEL
         self.letter_label = tk.Label(
@@ -48,7 +52,7 @@ class letterGenerator:
             textvariable = self.letter,
             font = (f"{self.letter_font}", self.letter_size)
         )
-        self.letter_label.grid(row=2, columnspan=3)
+        self.letter_label.grid(row=1, columnspan=3)
 
     # Method for running letter loop
     def letterLoop(self):
