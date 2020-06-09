@@ -22,7 +22,7 @@ class letterGenerator:
         self.master = master
         master.title("Scattergories letter sampler")
         self.label = tk.Label(master,
-            text = "Click STOP\nto select letter:",
+            text = "Click STOP to select letter:",
             font = "Corbel 20 bold"
         )
         self.label.grid(row=0)
