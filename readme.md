@@ -11,3 +11,5 @@ Launch from shell with:
 ```
 
 An environment is specified, but not required, as all of the libraries are standard (tkinter, random, time, string).
+
+Now with SOUNDS
