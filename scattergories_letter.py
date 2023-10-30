@@ -16,7 +16,7 @@ class letterGenerator:
         self.letter.set("A") # Initialize with "A"
         self.letter_size = 200
         self.letter_speed = 20
-        self.letter_font = "Old English Text MT"
+        self.letter_font = "Arial"
 
         # GUI
         self.master = master
